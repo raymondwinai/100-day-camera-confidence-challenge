@@ -245,7 +245,7 @@ footer{ border-top:1.5px solid var(--line); padding:2.4rem 0; text-align:center;
   .hero .lead{ margin:1.25rem 0 1.6rem; }
 
   /* tame the hero illustration so it doesn't dominate the fold */
-  .hero-illo{ max-width:300px; margin-inline:auto; }
+  .hero-illo{ max-width:420px; margin-inline:auto; }
 
   /* journey arc: tighter so the arrow doesn't crowd the labels */
   .arc{ gap:.5rem; font-size:.62rem; }
@@ -253,6 +253,19 @@ footer{ border-top:1.5px solid var(--line); padding:2.4rem 0; text-align:center;
   /* a little more breathing room between stacked list rows */
   .keeps li{ padding:1.2rem 0; }
 }
+
+/* ============================================================
+   ILLUSTRATIONS (Raymond line-art)
+============================================================ */
+.hero-illo img{ width:100%; height:auto; display:block; object-fit:contain; }
+.split{ display:grid; grid-template-columns:1fr; gap:clamp(1.6rem,4vw,3rem); align-items:center; }
+.split-text{ max-width:var(--measure); }
+.split-img img{ width:100%; height:auto; display:block; object-fit:contain; }
+@media(min-width:860px){ .split{ grid-template-columns:1.05fr .95fr; } }
+.illo-wide{ margin:clamp(2rem,5vw,3rem) auto 0; max-width:54rem; }
+.illo-wide img{ width:100%; height:auto; display:block; object-fit:contain; }
+.crowd{ max-width:46rem; }
+.crowd img{ width:100%; height:auto; display:block; object-fit:contain; }
 </style>
 </head>
 
@@ -298,42 +311,15 @@ footer{ border-top:1.5px solid var(--line); padding:2.4rem 0; text-align:center;
 
       <!-- HERO ILLUSTRATION — original line-art doodle -->
       <div class="hero-illo">
-        <svg viewBox="0 0 420 360" fill="none" aria-hidden="true">
-          <g stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-            <!-- phone on tripod -->
-            <rect x="60" y="96" width="78" height="132" rx="13"/>
-            <circle cx="99" cy="118" r="5" fill="currentColor" stroke="none"/>
-            <circle cx="99" cy="196" r="7" stroke="var(--rust)"/>
-            <path d="M76 228 L 60 320 M99 228 L 99 326 M122 228 L 138 320"/>
-            <path d="M52 322 L 70 318 M90 326 L 108 326 M130 322 L 148 318"/>
-            <!-- person, relaxed, gesturing -->
-            <circle cx="288" cy="120" r="40"/>
-            <path d="M262 92 C 270 78, 306 78, 314 92"/>            <!-- hair -->
-            <circle cx="276" cy="120" r="2.6" fill="currentColor" stroke="none"/>
-            <circle cx="300" cy="120" r="2.6" fill="currentColor" stroke="none"/>
-            <path d="M276 138 C 284 146, 296 146, 302 137"/>          <!-- smile -->
-            <path d="M250 170 C 240 210, 244 280, 250 330"/>          <!-- left torso -->
-            <path d="M326 170 C 338 205, 336 280, 330 330"/>          <!-- right torso -->
-            <path d="M250 330 L 330 330"/>
-            <!-- gesturing arm toward phone -->
-            <path d="M256 196 C 220 188, 188 182, 162 176"/>
-            <path d="M162 176 l 12 -8 M162 176 l 6 13"/>               <!-- hand -->
-            <!-- speech bubble with heart -->
-            <path d="M300 28 C 250 26, 232 60, 256 78 C 250 90, 244 92, 240 98 C 256 96, 264 92, 276 92 C 332 96, 352 56, 326 36 C 318 30, 310 28, 300 28 Z"/>
-            <path d="M292 50 C 288 44, 278 46, 280 54 C 281 60, 292 66, 294 68 C 296 66, 308 60, 308 53 C 309 46, 299 43, 294 50" stroke="var(--rust)"/>
-          </g>
-          <!-- sparkles -->
-          <path d="M360 120 C 362 130, 366 134, 376 136 C 366 138, 362 142, 360 152 C 358 142, 354 138, 344 136 C 354 134, 358 130, 360 120 Z" fill="var(--rust)"/>
-          <path d="M168 60 C 169 66, 172 69, 178 70 C 172 71, 169 74, 168 80 C 167 74, 164 71, 158 70 C 164 69, 167 66, 168 60 Z" fill="var(--gold)"/>
-        </svg>
-        <span class="note" style="right:2%; top:6%;">future you ✦</span>
-      </div>
+          <img src="assets/images/raymond-camera-confidence.webp" alt="Raymond, relaxed and smiling, gesturing as he films himself with a phone on a tripod" width="1300" height="732" decoding="async">
+        </div>
     </div>
   </section>
 
   <!-- ===================== YOU'VE KNOWN THIS ===================== -->
   <section class="frame">
-    <div class="col reveal">
+    <div class="split reveal">
+      <div class="split-text">
       <p class="eyebrow"><span class="tick"></span>The thing you keep putting off</p>
       <h2>You've known this for a while</h2>
       <p>You're good at what you do. People feel it the moment they're in a room with you.</p>
@@ -341,6 +327,8 @@ footer{ border-top:1.5px solid var(--line); padding:2.4rem 0; text-align:center;
       <p>So you've thought about it, maybe for months. But every time you go to start, the advice contradicts itself, the whole thing feels overwhelming, and the camera just… stops you.</p>
       <p>So you put it off again.</p>
       <p class="pull">This is the 100 days where that finally changes, <span class="mark"><svg viewBox="0 0 320 44" preserveAspectRatio="none" aria-hidden="true"><path d="M8 30 C 90 18, 230 16, 312 24 C 250 36, 120 38, 6 34 Z" fill="var(--gold-soft)"/></svg><span>for good.</span></span></p>
+    </div>
+      <figure class="split-img"><img src="assets/images/hesitation-before-recording.webp" alt="Raymond at his desk looking unsure, hesitating before hitting record" width="1100" height="825" loading="lazy" decoding="async"></figure>
     </div>
   </section>
 
@@ -365,6 +353,9 @@ footer{ border-top:1.5px solid var(--line); padding:2.4rem 0; text-align:center;
       <h2>Why 100 days?</h2>
       <p>This was never about making 100 videos.</p>
       <p class="pull" style="margin-top:0;">It's about who you become while making them.</p>
+    </div>
+    <figure class="illo-wide reveal"><img src="assets/images/camera-confidence-journey.webp" alt="Three stages, left to right: Raymond hesitant, then filming, then confident and at ease on camera" width="1600" height="900" loading="lazy" decoding="async"></figure>
+    <div class="col reveal">
       <p style="margin-top:1.8rem;">On day 1, posting feels like effort, a stretch, something just outside who you are. That's normal: right now, "content creator" is a costume you put on each time.</p>
       <p>By day 100, it's not a costume. It's just you.</p>
       <p>Somewhere in there the sentence subtly changes…from <em>"I'm trying to post more"</em> to <em>"this is just how I show up now."</em> You stop deciding whether to film. You just film, the way you don't decide to brush your teeth.</p>
@@ -477,25 +468,7 @@ footer{ border-top:1.5px solid var(--line); padding:2.4rem 0; text-align:center;
       <p style="max-width:34rem;margin-inline:auto;"><strong>A daily live Zoom call</strong>. Drop in if you need to, no obligation. And <strong>an online community of like-minded people</strong>, all on exactly the same 100 days, sharing their reps and cheering each other on.</p>
 
       <!-- CROWD DOODLE -->
-      <div class="crowd">
-        <svg viewBox="0 0 560 150" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <!-- person 1 -->
-          <circle cx="60" cy="58" r="22"/><path d="M28 132 C 32 96, 88 96, 92 132"/>
-          <!-- person 2 (glasses) -->
-          <circle cx="155" cy="50" r="22"/><circle cx="149" cy="49" r="5"/><circle cx="161" cy="49" r="5"/><path d="M154 49 h 2"/><path d="M122 132 C 126 92, 184 92, 188 132"/>
-          <!-- person 3 (curly) -->
-          <circle cx="250" cy="58" r="22"/><path d="M230 42 q 8 -14 20 -10 q 12 -4 20 10" /><path d="M218 132 C 222 96, 278 96, 282 132"/>
-          <!-- person 4 (hat) -->
-          <circle cx="345" cy="52" r="22"/><path d="M322 40 h 46 M331 40 q 14 -16 28 0"/><path d="M312 132 C 316 94, 374 94, 378 132"/>
-          <!-- person 5 -->
-          <circle cx="440" cy="58" r="22"/><path d="M408 132 C 412 96, 468 96, 472 132"/>
-          <!-- person 6 -->
-          <circle cx="520" cy="50" r="20"/><path d="M492 132 C 496 96, 544 96, 548 132"/>
-          <!-- little hearts floating -->
-          <path d="M196 22 c -3 -4 -10 -2 -8 4 c 1 5 8 9 8 9 c 0 0 7 -4 8 -9 c 2 -6 -5 -8 -8 -4" stroke="var(--rust)"/>
-          <path d="M392 26 c -2 -3 -8 -2 -6 3 c 1 4 6 7 6 7 c 0 0 5 -3 6 -7 c 2 -5 -4 -6 -6 -3" stroke="var(--gold)"/>
-        </svg>
-      </div>
+      <figure class="crowd"><img src="assets/images/supportive-creator-community.webp" alt="A small, friendly group gathered around a table, sharing and encouraging each other" width="1500" height="844" loading="lazy" decoding="async"></figure>
       <p class="pull" style="margin-inline:auto; max-width:26rem;">You're never doing this alone.</p>
     </div>
   </section>
