@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en-SG">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The 100-Day Camera Confidence Challenge · Win Media Studios</title>
+<meta name="description" content="One published rep a day, for 100 days, alongside a small group — until showing up on camera feels as natural as talking to a client across the table.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Bricolage Grotesque = friendly display · Inter = clean body -->
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   TOKENS — clean & warm, WMS palette kept
+============================================================ */
+:root{
+  --cream:    #F5F0E6;   /* clean warm ivory */
+  --paper:    #FBF8F0;   /* lifted cards / illo blocks */
+  --ink:      #241C14;   /* warm near-black — text + line-art */
+  --ink-soft: #524634;
+  --rust:     #B5552B;   /* accent */
+  --rust-deep:#A2461E;   /* button ground */
+  --rust-text:#FBF6EC;
+  --gold:     #F0C94E;   /* highlighter yellow (ties to brand gold) */
+  --gold-soft:#F6E2A6;
+  --line:     #E4DBC8;
+
+  --display:"Bricolage Grotesque", system-ui, sans-serif;
+  --body:"Inter", system-ui, sans-serif;
+
+  --measure: 40rem;
+  --wide:    70rem;
+}
+*,*::before,*::after{ box-sizing:border-box; }
+html{ -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
+body{
+  margin:0; background:var(--cream); color:var(--ink); overflow-x:hidden;
+  font-family:var(--body); font-size:1.12rem; line-height:1.65; font-weight:400;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+img{ max-width:100%; display:block; }
+
+/* ============================================================
+   LAYOUT
+============================================================ */
+.frame{ max-width:var(--wide); margin:0 auto; padding:0 clamp(1.25rem,5vw,3rem); }
+.col{ max-width:var(--measure); margin-inline:auto; }
+section{ padding:clamp(3.2rem,8vw,5.5rem) 0; }
+
+/* ============================================================
+   TYPE
+============================================================ */
+.eyebrow{
+  font-family:var(--body); font-size:.72rem; font-weight:600;
+  letter-spacing:.16em; text-transform:uppercase; color:var(--rust);
+  margin:0 0 1.1rem; display:inline-flex; align-items:center; gap:.5rem;
+}
+.eyebrow .tick{ width:18px; height:1px; background:var(--rust); display:inline-block; }
+h1,h2,h3{ font-family:var(--display); font-weight:700; color:var(--ink); margin:0; letter-spacing:-.02em; }
+h1{ font-size:clamp(2.5rem,6.6vw,4rem); line-height:1.02; font-weight:800; }
+h2{ font-size:clamp(2rem,4.8vw,2.85rem); line-height:1.08; margin-bottom:1.4rem; }
+p{ margin:0 0 1.2rem; } p:last-child{ margin-bottom:0; }
+strong{ font-weight:600; color:var(--ink); }
+em{ font-style:italic; }
+.lead{ font-size:1.3rem; line-height:1.55; color:var(--ink-soft); }
+.pull{
+  font-family:var(--display); font-weight:600;
+  font-size:clamp(1.5rem,3.6vw,2.05rem); line-height:1.22; letter-spacing:-.02em;
+  color:var(--ink); margin:1.8rem 0 0;
+}
+.accent{ color:var(--rust); }
+
+/* highlighter swash behind a word */
+.mark{ position:relative; white-space:nowrap; }
+.mark > svg{ position:absolute; left:-6%; top:50%; width:112%; height:1.05em;
+  transform:translateY(-46%); z-index:0; pointer-events:none; }
+.mark > span{ position:relative; z-index:1; }
+
+/* hand-drawn circle around a word */
+.circ{ position:relative; white-space:nowrap; }
+.circ > svg{ position:absolute; left:-12%; top:-30%; width:124%; height:160%;
+  z-index:0; pointer-events:none; overflow:visible; }
+.circ > span{ position:relative; z-index:1; }
+
+/* ============================================================
+   HEADER
+============================================================ */
+.masthead{ display:flex; justify-content:space-between; align-items:center; padding:1.5rem 0; }
+.wordmark{ font-family:var(--display); font-weight:700; font-size:1.05rem; letter-spacing:-.01em; }
+.wordmark span{ color:var(--rust); }
+.pill{
+  font-family:var(--body); font-weight:600; font-size:.82rem; letter-spacing:.01em;
+  text-decoration:none; color:var(--ink);
+  border:1.5px solid var(--ink); border-radius:999px; padding:.55rem 1.2rem;
+  transition:background .18s ease,color .18s ease;
+}
+.pill:hover{ background:var(--ink); color:var(--cream); }
+
+/* ============================================================
+   CTA
+============================================================ */
+.cta-wrap{ text-align:center; }
+.cta{
+  display:inline-flex; align-items:center; gap:.55rem;
+  font-family:var(--body); font-weight:600; font-size:1.02rem;
+  background:var(--rust-deep); color:var(--rust-text); text-decoration:none;
+  padding:1rem 2.1rem; border-radius:999px;
+  transition:transform .18s ease, background .18s ease;
+}
+.cta:hover{ background:var(--rust); transform:translateY(-2px); }
+.cta:focus-visible{ outline:2px solid var(--ink); outline-offset:3px; }
+.cta-note{
+  font-family:var(--body); font-weight:500; font-size:.78rem;
+  letter-spacing:.12em; text-transform:uppercase; color:var(--ink-soft); margin-top:1rem;
+}
+
+/* ============================================================
+   HERO
+============================================================ */
+.hero{ padding:clamp(2rem,6vw,3.5rem) 0 clamp(2.5rem,6vw,4rem); }
+.hero-grid{ display:grid; grid-template-columns:1fr; gap:clamp(2rem,5vw,3.5rem); align-items:center; }
+@media(min-width:860px){ .hero-grid{ grid-template-columns:1.05fr .95fr; } }
+.hero h1{ max-width:14ch; }
+.hero .lead{ max-width:32rem; margin:1.5rem 0 2rem; }
+.hero-illo{ position:relative; }
+.hero-illo svg{ width:100%; height:auto; color:var(--ink); }
+.note{
+  position:absolute; font-family:var(--display); font-style:italic; font-weight:600;
+  font-size:.95rem; color:var(--rust); transform:rotate(-7deg);
+}
+
+/* the 100-day arc — hand-drawn journey */
+.arc{ display:flex; align-items:center; gap:.8rem; max-width:30rem; margin:2.4rem 0 0;
+  font-family:var(--body); font-size:.7rem; font-weight:600; letter-spacing:.12em;
+  text-transform:uppercase; color:var(--ink-soft); }
+.arc svg{ flex:1; height:26px; color:var(--rust); }
+
+/* ============================================================
+   SPOT-DOODLE ROW (15 minutes)
+============================================================ */
+.spots{ display:grid; grid-template-columns:1fr; gap:1.6rem; margin-top:2.6rem; }
+@media(min-width:680px){ .spots{ grid-template-columns:repeat(3,1fr); } }
+.spot{ text-align:center; }
+.spot svg{ width:64px; height:64px; color:var(--ink); margin:0 auto .8rem; }
+.spot b{ font-family:var(--display); font-weight:600; font-size:1.1rem; display:block; margin-bottom:.2rem; }
+.spot span{ color:var(--ink-soft); font-size:.98rem; }
+
+/* ============================================================
+   KEEPS LIST
+============================================================ */
+.keeps{ list-style:none; margin:2.2rem 0 0; padding:0; }
+.keeps li{ display:grid; grid-template-columns:2.4rem 1fr; gap:1rem; padding:1.4rem 0; border-top:1.5px solid var(--line); }
+.keeps li:last-child{ border-bottom:1.5px solid var(--line); }
+.keeps .num{ font-family:var(--display); font-weight:700; font-size:1.3rem; color:var(--rust); line-height:1.1; }
+.keeps b{ font-family:var(--display); font-weight:600; font-size:1.2rem; display:block; margin-bottom:.2rem; }
+.keeps span{ color:var(--ink-soft); font-size:1.02rem; line-height:1.5; }
+
+/* ============================================================
+   PEOPLE
+============================================================ */
+.people{ display:grid; gap:2.2rem; margin-top:2.4rem; }
+.person{ display:grid; grid-template-columns:auto 1fr; gap:1.3rem; align-items:start; }
+.person .face{ width:84px; height:84px; flex:none; }
+.person .face svg{ width:100%; height:100%; color:var(--ink); }
+.person h3{ font-size:1.3rem; margin-bottom:.35rem; }
+.person p{ font-size:1.02rem; line-height:1.55; color:var(--ink-soft); margin:0; }
+.person .quote{ color:var(--ink); font-style:italic; }
+@media(max-width:520px){ .person{ grid-template-columns:1fr; } .person .face{ width:72px; height:72px; } }
+
+/* ============================================================
+   CROWD (community)
+============================================================ */
+.crowd{ margin:2.4rem auto 0; max-width:34rem; color:var(--ink); }
+.crowd svg{ width:100%; height:auto; }
+
+/* media placeholder (story photo) */
+.media{
+  margin:2.2rem 0 0; aspect-ratio:5/4; border:2px dashed var(--line);
+  border-radius:18px; background:var(--paper);
+  display:grid; place-items:center; text-align:center; padding:1.4rem;
+}
+.media .label{ font-family:var(--body); font-size:.72rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--rust); }
+.media .sub{ font-style:italic; color:var(--ink-soft); margin-top:.4rem; }
+
+/* ============================================================
+   OFFER
+============================================================ */
+.offer{ text-align:center; }
+.price{ font-family:var(--display); font-weight:800; font-size:clamp(3.2rem,9vw,4.5rem); line-height:1; margin:.5rem 0 .2rem; }
+.price small{ font-size:.3em; font-weight:600; color:var(--ink-soft); vertical-align:.85em; letter-spacing:.02em; }
+.terms{ color:var(--ink-soft); font-size:1.08rem; max-width:30rem; margin:1.2rem auto 2rem; }
+.terms b{ color:var(--ink); }
+
+/* ============================================================
+   FAQ
+============================================================ */
+.faq{ margin-top:2.4rem; }
+.faq dt{ font-family:var(--display); font-weight:600; font-size:1.22rem; margin-top:1.8rem; padding-top:1.8rem; border-top:1.5px solid var(--line); }
+.faq dt:first-child{ border-top:0; padding-top:0; margin-top:0; }
+.faq dd{ margin:.5rem 0 0; color:var(--ink-soft); font-size:1.04rem; line-height:1.55; }
+
+/* ============================================================
+   FINAL + FOOTER
+============================================================ */
+.final{ text-align:center; }
+.final h2{ max-width:18ch; margin-inline:auto; }
+.final .pull{ max-width:30rem; margin-inline:auto; }
+footer{ border-top:1.5px solid var(--line); padding:2.4rem 0; text-align:center; }
+.filing{ font-family:var(--body); font-weight:500; font-size:.74rem; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-soft); line-height:1.9; }
+
+/* ============================================================
+   REVEAL + DRAW
+============================================================ */
+.reveal{ opacity:0; transform:translateY(16px); transition:opacity .7s ease, transform .7s ease; }
+.reveal.is-visible{ opacity:1; transform:none; }
+.draw path{ stroke-dasharray:1; stroke-dashoffset:1; }
+.draw.is-visible path{ animation:draw 1s ease forwards; }
+@keyframes draw{ to{ stroke-dashoffset:0; } }
+@media(prefers-reduced-motion:reduce){
+  .reveal{ opacity:1; transform:none; transition:none; }
+  .draw path{ stroke-dashoffset:0; animation:none; }
+  html{ scroll-behavior:auto; }
+}
+
+/* ============================================================
+   SMALL-SCREEN TUNING (phones)
+============================================================ */
+@media(max-width:520px){
+  body{ font-size:1.05rem; }
+  .lead{ font-size:1.16rem; }
+
+  /* header: keep wordmark + button on one tidy row */
+  .masthead{ padding:1.1rem 0; gap:.6rem; }
+  .wordmark{ font-size:.98rem; }
+  .pill{ padding:.5rem 1rem; font-size:.76rem; white-space:nowrap; flex:none; }
+
+  /* full-width, thumb-friendly CTAs */
+  .cta{ display:flex; width:100%; justify-content:center; padding:.95rem 1.4rem; }
+  .hero .cta-wrap{ width:100%; }
+  .hero .lead{ margin:1.25rem 0 1.6rem; }
+
+  /* tame the hero illustration so it doesn't dominate the fold */
+  .hero-illo{ max-width:300px; margin-inline:auto; }
+
+  /* journey arc: tighter so the arrow doesn't crowd the labels */
+  .arc{ gap:.5rem; font-size:.62rem; }
+
+  /* a little more breathing room between stacked list rows */
+  .keeps li{ padding:1.2rem 0; }
+}
+</style>
+</head>
+
+<body>
+
+<header class="frame">
+  <div class="masthead">
+    <span class="wordmark">Win Media <span>Studios</span></span>
+    <!-- PAYMENT LINK PLACEHOLDER (header) — replace href="#" -->
+    <a class="pill" href="https://creatorarchetype.hopper.so/c/hubs/100daychallenge/checkout?activeTab=shop&productId=6a37990747463ee9bc97aea1&productPlanId=6a37990747463ee9bc97aea2">Join the first 20</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero frame">
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow"><span class="tick"></span>The 100-Day Camera Confidence Challenge</p>
+        <h1>You know you want to be
+          <span class="circ"><svg viewBox="0 0 240 90" class="draw" aria-hidden="true"><path d="M120 9 C 44 7, 14 30, 16 48 C 18 72, 84 85, 142 82 C 210 79, 230 54, 224 36 C 218 17, 168 8, 104 10" fill="none" stroke="var(--rust)" stroke-width="3.2" stroke-linecap="round" pathLength="1"/></svg><span>out there.</span></span>
+          Sharing what you know, reaching <em>the people who need you.</em></h1>
+        <p class="lead">One published rep a day, alongside a small group doing the same brave thing — until showing up on camera feels as natural as talking to a client across the table.</p>
+        <div class="cta-wrap" style="text-align:left;">
+          <!-- ============================================================
+               PAYMENT LINK PLACEHOLDER  ·  replace every href="#" below
+               (hero, offer, final) with your real payment link.
+          ============================================================ -->
+          <a class="cta" href="https://creatorarchetype.hopper.so/c/hubs/100daychallenge/checkout?activeTab=shop&productId=6a37990747463ee9bc97aea1&productPlanId=6a37990747463ee9bc97aea2">Join the first 20 <span aria-hidden="true">→</span></a>
+          <p class="cta-note" style="letter-spacing:.1em;">We start 1 July · Twenty seats</p>
+        </div>
+        <div class="arc">
+          <span>Day 01</span>
+          <svg viewBox="0 0 300 26" fill="none" aria-hidden="true">
+            <path d="M4 16 C 80 4, 220 4, 296 16" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="1 9"/>
+            <circle cx="6" cy="16" r="4" fill="currentColor"/>
+            <path d="M296 16 l -13 -6 M296 16 l -11 8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+          </svg>
+          <span>Day 100</span>
+        </div>
+      </div>
+
+      <!-- HERO ILLUSTRATION — original line-art doodle -->
+      <div class="hero-illo">
+        <svg viewBox="0 0 420 360" fill="none" aria-hidden="true">
+          <g stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <!-- phone on tripod -->
+            <rect x="60" y="96" width="78" height="132" rx="13"/>
+            <circle cx="99" cy="118" r="5" fill="currentColor" stroke="none"/>
+            <circle cx="99" cy="196" r="7" stroke="var(--rust)"/>
+            <path d="M76 228 L 60 320 M99 228 L 99 326 M122 228 L 138 320"/>
+            <path d="M52 322 L 70 318 M90 326 L 108 326 M130 322 L 148 318"/>
+            <!-- person, relaxed, gesturing -->
+            <circle cx="288" cy="120" r="40"/>
+            <path d="M262 92 C 270 78, 306 78, 314 92"/>            <!-- hair -->
+            <circle cx="276" cy="120" r="2.6" fill="currentColor" stroke="none"/>
+            <circle cx="300" cy="120" r="2.6" fill="currentColor" stroke="none"/>
+            <path d="M276 138 C 284 146, 296 146, 302 137"/>          <!-- smile -->
+            <path d="M250 170 C 240 210, 244 280, 250 330"/>          <!-- left torso -->
+            <path d="M326 170 C 338 205, 336 280, 330 330"/>          <!-- right torso -->
+            <path d="M250 330 L 330 330"/>
+            <!-- gesturing arm toward phone -->
+            <path d="M256 196 C 220 188, 188 182, 162 176"/>
+            <path d="M162 176 l 12 -8 M162 176 l 6 13"/>               <!-- hand -->
+            <!-- speech bubble with heart -->
+            <path d="M300 28 C 250 26, 232 60, 256 78 C 250 90, 244 92, 240 98 C 256 96, 264 92, 276 92 C 332 96, 352 56, 326 36 C 318 30, 310 28, 300 28 Z"/>
+            <path d="M292 50 C 288 44, 278 46, 280 54 C 281 60, 292 66, 294 68 C 296 66, 308 60, 308 53 C 309 46, 299 43, 294 50" stroke="var(--rust)"/>
+          </g>
+          <!-- sparkles -->
+          <path d="M360 120 C 362 130, 366 134, 376 136 C 366 138, 362 142, 360 152 C 358 142, 354 138, 344 136 C 354 134, 358 130, 360 120 Z" fill="var(--rust)"/>
+          <path d="M168 60 C 169 66, 172 69, 178 70 C 172 71, 169 74, 168 80 C 167 74, 164 71, 158 70 C 164 69, 167 66, 168 60 Z" fill="var(--gold)"/>
+        </svg>
+        <span class="note" style="right:2%; top:6%;">future you ✦</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== YOU'VE KNOWN THIS ===================== -->
+  <section class="frame">
+    <div class="col reveal">
+      <p class="eyebrow"><span class="tick"></span>The thing you keep putting off</p>
+      <h2>You've known this for a while</h2>
+      <p>You're good at what you do. People feel it the moment they're in a room with you.</p>
+      <p>And you know the truth: if you're not on top of mind, you're not on their mind at all. The people who need you — your future clients, the ones your message could reach — they're online. You're not there yet.</p>
+      <p>So you've thought about it. Maybe for months.</p>
+      <p>But every time you go to start, it's overwhelming. The advice all contradicts itself. And the camera just… stops you.</p>
+      <p>So you put it off again.</p>
+      <p class="pull">This is the 100 days where <span class="mark"><svg viewBox="0 0 320 44" preserveAspectRatio="none" aria-hidden="true"><path d="M8 30 C 90 18, 230 16, 312 24 C 250 36, 120 38, 6 34 Z" fill="var(--gold-soft)"/></svg><span>that changes.</span></span></p>
+    </div>
+  </section>
+
+  <!-- ===================== WHY IT WORKS ===================== -->
+  <section class="frame">
+    <div class="col reveal">
+      <p class="eyebrow"><span class="tick"></span>The design</p>
+      <h2>Why it works</h2>
+      <p>Confidence on camera isn't a talent. It's a habit. And habits are built the same way every time — small reps, repeated, until the thing that felt hard becomes the thing you just do.</p>
+      <p>But nobody builds a habit on willpower alone. You already know this, because you know how a gym works.</p>
+      <p>Think about it. You don't get fit by reading about it, or by promising yourself you'll train "soon." You get fit by showing up. And you show up far more reliably when there's a class waiting, a training partner who notices you're not there, people sweating beside you who make the hard thing feel normal.</p>
+      <p class="pull">Train alone at home and you quit in a fortnight. Train in a room full of people doing the same thing, and somehow you keep going.</p>
+      <p style="margin-top:1.8rem;">That's the whole design here.</p>
+      <p><strong>The reps build the habit.</strong> One published video a day. Small, public, non-negotiable.</p>
+      <p><strong>The group makes the reps happen.</strong> A cohort that started together, people doing the exact same thing on the exact same days, who notice when you go quiet. When motivation dips — and it will — that's what carries you across.</p>
+      <p>You're not doing this on discipline. You're doing it the way people actually change: in good company, one rep at a time.</p>
+    </div>
+  </section>
+
+  <!-- ===================== WHY 100 DAYS ===================== -->
+  <section class="frame">
+    <div class="col reveal">
+      <p class="eyebrow"><span class="tick"></span>Why one hundred</p>
+      <h2>Why 100 days?</h2>
+      <p>This was never about making 100 videos.</p>
+      <p class="pull" style="margin-top:0;">It's about who you become while making them.</p>
+      <p style="margin-top:1.8rem;">On day 1, posting is something you're <em>trying</em> to do. It feels like effort. Like a stretch. Like something just outside who you are. That's normal — right now, "content creator" is a costume you're putting on each time.</p>
+      <p>By day 100, it's not a costume. It's just you.</p>
+      <p>Somewhere in those hundred days the sentence quietly changes — from <em>"I'm trying to post more"</em> to <em>"this is just how I show up now."</em> You stop deciding whether to film. You just film, the way you don't decide to brush your teeth.</p>
+      <p>That shift is the whole product. And it's exactly why short challenges don't work.</p>
+      <!-- Fact: UCL / Lally habit-formation research (avg ~66 days, up to 254) -->
+      <p>You can't change who you <em>are</em> in 30 days. The research puts the average habit closer to 66 days — and for many people, longer still. A month-long challenge ends just as the old identity is loosening its grip, long before the new one sets. So you slip back, and decide you're "not a camera person" after all.</p>
+      <p>100 days is long enough for the new identity to hold.</p>
+      <p>And you walk away with the proof in your hands: a hundred pieces of content — a body of work that says, plainly, <em>this is who I am now.</em></p>
+      <p class="pull">You don't finish this challenge. <span class="accent">You become someone.</span></p>
+    </div>
+  </section>
+
+  <!-- ===================== 15 MINUTES ===================== -->
+  <section class="frame">
+    <div class="col reveal" style="text-align:center;">
+      <p class="eyebrow" style="justify-content:center;"><span class="tick"></span>The daily rep</p>
+      <h2>All you need is 15 minutes a day</h2>
+      <p style="max-width:34rem;margin-inline:auto;">That's it. Genuinely. We give you the prompt. You film it, give it a quick edit, and post. No blank page to stare at. No gear to buy. No hour-long production.</p>
+
+      <div class="spots">
+        <div class="spot">
+          <!-- prompt: speech bubble -->
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 14 H 52 A 4 4 0 0 1 56 18 V 40 A 4 4 0 0 1 52 44 H 30 L 18 54 V 44 H 12 A 4 4 0 0 1 8 40 V 18 A 4 4 0 0 1 12 14 Z"/>
+            <path d="M20 25 H 44 M20 33 H 38"/>
+          </svg>
+          <b>We prompt</b><span>The day's angle, ready.</span>
+        </div>
+        <div class="spot">
+          <!-- film: phone -->
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="20" y="8" width="24" height="48" rx="5"/>
+            <circle cx="32" cy="20" r="2.4" fill="currentColor" stroke="none"/>
+            <path d="M32 32 l 6 4 l -6 4 Z" fill="var(--rust)" stroke="var(--rust)"/>
+          </svg>
+          <b>You film</b><span>One quick take.</span>
+        </div>
+        <div class="spot">
+          <!-- post: paper plane -->
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M56 10 L 8 30 L 28 36 L 56 10 Z"/>
+            <path d="M28 36 L 30 52 L 40 40"/>
+            <path d="M28 36 L 56 10"/>
+          </svg>
+          <b>You post</b><span>Public. Done. On with your day.</span>
+        </div>
+      </div>
+      <p class="pull" style="margin-inline:auto; max-width:28rem;">Small on purpose — so you can't talk yourself out of it.</p>
+    </div>
+  </section>
+
+  <!-- ===================== STORY ===================== -->
+  <section class="frame">
+    <div class="col reveal">
+      <p class="eyebrow"><span class="tick"></span>A bit about me</p>
+      <h2>I'll tell you something I don't lead with often.</h2>
+      <p>I grew up with social anxiety. A proper introvert — the kind who'd rehearse what to say and still freeze. I always had a lot I wanted to share, always felt things deeply, always knew that one message online could reach people I'd never meet in person.</p>
+      <p>But I couldn't talk to people in a room. Let alone a camera.</p>
+      <p>Nobody handed me confidence. I worked for it. Read the books, took the courses, walked into uncomfortable rooms on purpose — again and again — until they stopped being uncomfortable.</p>
+      <p>Then one day it clicked: the camera is the same thing. Same fear, same judgment, same quiet worry about whether you're good enough. Just with a lens in front of it.</p>
+      <p>And here's the honest part — <em>I still find it hard sometimes.</em></p>
+      <p>That's exactly why I can help. I'm not on the far shore shouting that it's easy. I'm a few steps ahead of you, on the same path — and I know where it gets slippery, because I've slipped there myself.</p>
+      <!-- IMAGE PLACEHOLDER — swap for <img src="raymond.jpg" alt="Raymond"> -->
+      <figure class="media">
+        <div><p class="label">Your photo here</p><p class="sub">Warm, human, mid-conversation</p></div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===================== WHAT YOU WALK OUT WITH ===================== -->
+  <section class="frame">
+    <div class="col reveal">
+      <p class="eyebrow"><span class="tick"></span>What's yours to keep</p>
+      <h2>What you walk out with</h2>
+      <p>A hundred days in, here's what's yours to keep:</p>
+      <ol class="keeps">
+        <li><span class="num">01</span><span><b>100 content ideas</b><span>So you never sit staring at a blank screen wondering what to talk about.</span></span></li>
+        <li><span class="num">02</span><span><b>My growing video library</b><span>Everything I know about speaking to camera with confidence, in one place, yours to revisit.</span></span></li>
+        <li><span class="num">03</span><span><b>Your signature content series</b><span>A format that's recognisably <em>you</em>, that people start to look out for.</span></span></li>
+        <li><span class="num">04</span><span><b>Your brand messaging</b><span>Clear on what you stand for and how you say it, so every video pulls in the same direction.</span></span></li>
+        <li><span class="num">05</span><span><b>A personal brand no one can replicate</b><span>Not another creator, not even AI. Because it's built on the one thing that can't be copied: you.</span></span></li>
+        <li><span class="num">06</span><span><b>100 pieces of content</b><span>Proof, portfolio and a content library, all at once.</span></span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===================== REAL PEOPLE ===================== -->
+  <section class="frame">
+    <div class="col reveal">
+      <p class="eyebrow"><span class="tick"></span>People I've sat beside</p>
+      <h2>Real people</h2>
+      <div class="people">
+        <div class="person">
+          <!-- IMAGE PLACEHOLDER — swap .face svg for <img src="edrick.jpg" alt="Edrick"> -->
+          <div class="face"><svg viewBox="0 0 84 84" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="42" cy="42" r="39"/><circle cx="42" cy="35" r="13"/><path d="M20 70 C 24 56, 60 56, 64 70"/></svg></div>
+          <div><h3>Edrick</h3><p>Came to me successful and charismatic on stage — and completely stuck. His first one-minute video took twenty minutes and a pile of takes. I sat beside him through the first few. Two years on: confident on camera, a 30–40k following, quietly changing lives.</p></div>
+        </div>
+        <div class="person">
+          <div class="face"><svg viewBox="0 0 84 84" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="42" cy="42" r="39"/><circle cx="42" cy="35" r="13"/><path d="M29 28 q 13 -12 26 0"/><path d="M20 70 C 24 56, 60 56, 64 70"/></svg></div>
+          <div><h3>Marc</h3><p>Ran media operations for a property firm — knew the space cold, froze the moment he had to speak himself. Eighteen months later he'd built his own brand and fully become a creator.</p></div>
+        </div>
+        <div class="person">
+          <div class="face"><svg viewBox="0 0 84 84" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="42" cy="42" r="39"/><circle cx="42" cy="35" r="13"/><circle cx="36" cy="34" r="4"/><circle cx="48" cy="34" r="4"/><path d="M40 34 h 4"/><path d="M20 70 C 24 56, 60 56, 64 70"/></svg></div>
+          <div><h3>Alvin</h3><p>Exited his company for eight figures. He's the one who called me an <span class="quote">"entrepreneur therapist"</span> — which named the real job. Helping good people be who they already are, on camera as much as off.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== WHAT YOU'RE JOINING ===================== -->
+  <section class="frame">
+    <div class="col reveal" style="text-align:center;">
+      <p class="eyebrow" style="justify-content:center;"><span class="tick"></span>More than a challenge</p>
+      <h2>What you're actually joining</h2>
+      <p style="max-width:34rem;margin-inline:auto;"><strong>A daily live Zoom call</strong> — drop in if you need to, no obligation. And <strong>an online community of like-minded people</strong>, all on exactly the same 100 days, sharing their reps and cheering each other on.</p>
+
+      <!-- CROWD DOODLE -->
+      <div class="crowd">
+        <svg viewBox="0 0 560 150" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <!-- person 1 -->
+          <circle cx="60" cy="58" r="22"/><path d="M28 132 C 32 96, 88 96, 92 132"/>
+          <!-- person 2 (glasses) -->
+          <circle cx="155" cy="50" r="22"/><circle cx="149" cy="49" r="5"/><circle cx="161" cy="49" r="5"/><path d="M154 49 h 2"/><path d="M122 132 C 126 92, 184 92, 188 132"/>
+          <!-- person 3 (curly) -->
+          <circle cx="250" cy="58" r="22"/><path d="M230 42 q 8 -14 20 -10 q 12 -4 20 10" /><path d="M218 132 C 222 96, 278 96, 282 132"/>
+          <!-- person 4 (hat) -->
+          <circle cx="345" cy="52" r="22"/><path d="M322 40 h 46 M331 40 q 14 -16 28 0"/><path d="M312 132 C 316 94, 374 94, 378 132"/>
+          <!-- person 5 -->
+          <circle cx="440" cy="58" r="22"/><path d="M408 132 C 412 96, 468 96, 472 132"/>
+          <!-- person 6 -->
+          <circle cx="520" cy="50" r="20"/><path d="M492 132 C 496 96, 544 96, 548 132"/>
+          <!-- little hearts floating -->
+          <path d="M196 22 c -3 -4 -10 -2 -8 4 c 1 5 8 9 8 9 c 0 0 7 -4 8 -9 c 2 -6 -5 -8 -8 -4" stroke="var(--rust)"/>
+          <path d="M392 26 c -2 -3 -8 -2 -6 3 c 1 4 6 7 6 7 c 0 0 5 -3 6 -7 c 2 -5 -4 -6 -6 -3" stroke="var(--gold)"/>
+        </svg>
+      </div>
+      <p class="pull" style="margin-inline:auto; max-width:26rem;">You're never doing this alone.</p>
+    </div>
+  </section>
+
+  <!-- ===================== OFFER ===================== -->
+  <section class="frame" id="offer">
+    <div class="col reveal offer">
+      <p class="eyebrow" style="justify-content:center;"><span class="tick"></span>The offer</p>
+      <h2>The 100-Day Camera Confidence Challenge</h2>
+      <p class="price"><small>USD</small> $120</p>
+      <p class="cta-note" style="margin-top:0;">One-time</p>
+      <p class="terms">We start <b>1 July</b>, and the first cohort is capped at <b>20</b> — small on purpose, because the group is the medicine.</p>
+      <div class="cta-wrap">
+        <!-- PAYMENT LINK PLACEHOLDER — replace href="#" -->
+        <a class="cta" href="https://creatorarchetype.hopper.so/c/hubs/100daychallenge/checkout?activeTab=shop&productId=6a37990747463ee9bc97aea1&productPlanId=6a37990747463ee9bc97aea2">Join the first 20 <span aria-hidden="true">→</span></a>
+      </div>
+      <p class="terms" style="margin-top:1.6rem; font-size:.98rem;">No countdown timers here. The only reason to move is an honest one: we begin 1 July, and there are twenty seats.</p>
+    </div>
+  </section>
+
+  <!-- ===================== FAQ ===================== -->
+  <section class="frame">
+    <div class="col reveal">
+      <p class="eyebrow"><span class="tick"></span>Before you ask</p>
+      <h2>Questions people ask</h2>
+      <dl class="faq">
+        <dt>I'm an introvert. Is this for me?</dt>
+        <dd>It's <em>especially</em> for you. I built it as one. This isn't about becoming loud — it's about being yourself, with the fear turned down.</dd>
+        <dt>What do I post for 100 days?</dt>
+        <dd>You get a prompt every day. The prompt isn't there because you're short of ideas. It's there so <em>"I don't know what to post"</em> can't be the excuse.</dd>
+        <dt>I've tried before and stopped.</dt>
+        <dd>So has almost everyone here. That's the point. You don't need more willpower — you need a structure, and a group, that holds you when the motivation dips.</dd>
+        <dt>How much time a day?</dt>
+        <dd>Around fifteen minutes, especially at the start. If it ever takes an hour, something's gone wrong.</dd>
+        <dt>What if I miss a day?</dt>
+        <dd>A gentle check-in, not a punishment. The streak is there to pull you back, never to shame you.</dd>
+        <dt>What gear do I need?</dt>
+        <dd>A phone. That's it. We deliberately ignore gear early on — you add it later, once the habit's there.</dd>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ===================== FINAL CTA ===================== -->
+  <section class="frame">
+    <div class="col reveal final">
+      <h2>100 days from now, you could be someone who just… shows up.</h2>
+      <p class="pull">The worst case scenario isn't failing. It's our best case scenario never realised.</p>
+      <div class="cta-wrap" style="margin-top:2.4rem;">
+        <!-- PAYMENT LINK PLACEHOLDER — replace href="#" -->
+        <a class="cta" href="https://creatorarchetype.hopper.so/c/hubs/100daychallenge/checkout?activeTab=shop&productId=6a37990747463ee9bc97aea1&productPlanId=6a37990747463ee9bc97aea2">Join the first 20 <span aria-hidden="true">→</span></a>
+        <p class="cta-note">We start 1 July</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p class="filing">Win Media Studios · 100-Day Camera Confidence Challenge</p>
+  <p class="filing">Singapore · Est. 2022</p>
+</footer>
+
+<script>
+(function(){
+  var els = document.querySelectorAll('.reveal, .draw');
+  if(!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    els.forEach(function(e){ e.classList.add('is-visible'); }); return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('is-visible'); io.unobserve(en.target); } });
+  }, { threshold:.12, rootMargin:'0px 0px -8% 0px' });
+  els.forEach(function(e){ io.observe(e); });
+})();
+</script>
+
+</body>
+</html>
