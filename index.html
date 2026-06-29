@@ -164,7 +164,10 @@ em{ font-style:italic; }
 .person{ display:grid; grid-template-columns:auto 1fr; gap:1.3rem; align-items:start; }
 .person .face{ width:84px; height:84px; flex:none; }
 .person .face svg{ width:100%; height:100%; color:var(--ink); }
-.person h3{ font-size:1.3rem; margin-bottom:.35rem; }
+.person .face img{ width:100%; height:100%; border-radius:50%; object-fit:cover; display:block; }
+.person h3{ font-size:1.3rem; margin-bottom:.1rem; }
+.person .handle{ display:inline-block; font-family:var(--body); font-weight:600; font-size:.9rem; color:var(--rust); text-decoration:none; margin:0 0 .55rem; }
+.person .handle:hover{ text-decoration:underline; }
 .person p{ font-size:1.02rem; line-height:1.55; color:var(--ink-soft); margin:0; }
 .person .quote{ color:var(--ink); font-style:italic; }
 @media(max-width:520px){ .person{ grid-template-columns:1fr; } .person .face{ width:72px; height:72px; } }
@@ -451,17 +454,16 @@ footer{ border-top:1.5px solid var(--line); padding:2.4rem 0; text-align:center;
       <h2>Real people</h2>
       <div class="people">
         <div class="person">
-          <!-- IMAGE PLACEHOLDER — swap .face svg for <img src="edrick.jpg" alt="Edrick"> -->
-          <div class="face"><svg viewBox="0 0 84 84" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="42" cy="42" r="39"/><circle cx="42" cy="35" r="13"/><path d="M20 70 C 24 56, 60 56, 64 70"/></svg></div>
-          <div><h3>Edrick</h3><p>Charismatic on stage, completely stuck on camera — his first one-minute video took twenty minutes and a pile of takes. I sat beside him through the first few. Two years on: confident on camera, a 30–40k following, quietly changing lives.</p></div>
+          <div class="face"><img src="edrick.jpg" alt="Edrick Lie" loading="lazy"></div>
+          <div><h3>Edrick Lie</h3><a class="handle" href="https://instagram.com/edrickinspire" target="_blank" rel="noopener">@edrickinspire</a><p>Charismatic on stage, completely stuck on camera — his first one-minute video took twenty minutes and a pile of takes. I sat beside him through the first few. Two years on: confident on camera, a 30–40k following, quietly changing lives.</p></div>
         </div>
         <div class="person">
-          <div class="face"><svg viewBox="0 0 84 84" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="42" cy="42" r="39"/><circle cx="42" cy="35" r="13"/><path d="M29 28 q 13 -12 26 0"/><path d="M20 70 C 24 56, 60 56, 64 70"/></svg></div>
-          <div><h3>Marc</h3><p>Ran media operations for a property firm — knew the space cold, froze the moment he had to speak himself. Eighteen months later he'd built his own brand and fully become a creator.</p></div>
+          <div class="face"><img src="marc.jpg" alt="Marc Chan" loading="lazy"></div>
+          <div><h3>Marc Chan</h3><a class="handle" href="https://instagram.com/heymarcchan" target="_blank" rel="noopener">@heymarcchan</a><p>Ran media operations for a property firm — knew the space cold, froze the moment he had to speak himself. Eighteen months later he'd built his own brand and fully become a creator.</p></div>
         </div>
         <div class="person">
-          <div class="face"><svg viewBox="0 0 84 84" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="42" cy="42" r="39"/><circle cx="42" cy="35" r="13"/><circle cx="36" cy="34" r="4"/><circle cx="48" cy="34" r="4"/><path d="M40 34 h 4"/><path d="M20 70 C 24 56, 60 56, 64 70"/></svg></div>
-          <div><h3>Alvin</h3><p>Exited his company for eight figures. He's the one who called me an <span class="quote">"entrepreneur therapist"</span> — which named the real job. Helping good people be who they already are, on camera as much as off.</p></div>
+          <div class="face"><img src="alvin.jpg" alt="Alvin Poh" loading="lazy"></div>
+          <div><h3>Alvin Poh</h3><a class="handle" href="https://instagram.com/thealvinpoh" target="_blank" rel="noopener">@thealvinpoh</a><p>Exited his company for eight figures. He's the one who called me an <span class="quote">"entrepreneur therapist"</span> — which named the real job. Helping good people be who they already are, on camera as much as off.</p></div>
         </div>
       </div>
     </div>
