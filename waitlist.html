@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en-SG">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join the Waiting List · The 100-Day Camera Confidence Challenge</title>
+<meta name="description" content="The first cohort is filling up. Join the waiting list and be first to know — with founding-member pricing — the moment the next round of the 100-Day Camera Confidence Challenge opens.">
+<meta name="robots" content="noindex">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --cream:#F5F0E6; --paper:#FBF8F0; --ink:#241C14; --ink-soft:#524634;
+  --rust:#B5552B; --rust-deep:#A2461E; --rust-text:#FBF6EC;
+  --gold:#F0C94E; --gold-soft:#F6E2A6; --line:#E4DBC8;
+  --display:"Bricolage Grotesque", system-ui, sans-serif;
+  --body:"Inter", system-ui, sans-serif;
+  --measure:34rem; --wide:70rem;
+}
+*,*::before,*::after{ box-sizing:border-box; }
+html{ -webkit-text-size-adjust:100%; }
+body{ margin:0; background:var(--cream); color:var(--ink); overflow-x:hidden;
+  font-family:var(--body); font-size:1.12rem; line-height:1.65; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  min-height:100vh; display:flex; flex-direction:column; }
+img{ max-width:100%; display:block; }
+.frame{ max-width:var(--wide); margin:0 auto; padding:0 clamp(1.25rem,5vw,3rem); width:100%; }
+
+.masthead{ display:flex; justify-content:space-between; align-items:center; padding:1.5rem 0; gap:.6rem; }
+.wordmark{ font-family:var(--display); font-weight:700; font-size:1.05rem; letter-spacing:-.01em; }
+.wordmark span{ color:var(--rust); }
+.back{ font-family:var(--body); font-weight:600; font-size:.82rem; text-decoration:none; color:var(--ink-soft); white-space:nowrap; }
+.back:hover{ color:var(--rust); }
+
+main{ flex:1; display:flex; align-items:center; padding:clamp(2rem,6vw,4rem) 0 clamp(3rem,8vw,5rem); }
+.wrap{ max-width:var(--measure); margin-inline:auto; text-align:center; }
+
+.eyebrow{ font-family:var(--body); font-size:.72rem; font-weight:600; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--rust); margin:0 0 1.1rem; display:inline-flex; align-items:center; gap:.5rem; justify-content:center; }
+.eyebrow .tick{ width:18px; height:1px; background:var(--rust); display:inline-block; }
+h1{ font-family:var(--display); font-weight:800; color:var(--ink); margin:0 0 1rem;
+  font-size:clamp(2.4rem,6vw,3.4rem); line-height:1.04; letter-spacing:-.02em; }
+h1 .accent{ color:var(--rust); }
+.lead{ font-size:1.18rem; line-height:1.55; color:var(--ink-soft); margin:0 auto 2rem; max-width:30rem; }
+.lead b{ color:var(--ink); font-weight:600; }
+
+.illo{ max-width:23rem; margin:0 auto 2rem; }
+.illo img{ width:100%; height:auto; display:block; object-fit:contain; }
+
+/* form */
+.form{ max-width:26rem; margin:0 auto; text-align:left; }
+.form label{ display:block; font-size:.78rem; font-weight:600; letter-spacing:.02em; color:var(--ink-soft); margin:0 0 .35rem .1rem; }
+.form input{ width:100%; font-family:var(--body); font-size:1.02rem; color:var(--ink);
+  background:var(--paper); border:1.5px solid var(--line); border-radius:14px; padding:.85rem 1rem; margin-bottom:1rem; }
+.form input::placeholder{ color:#9c9080; }
+.form input:focus{ outline:none; border-color:var(--rust); box-shadow:0 0 0 3px rgba(181,85,43,.14); }
+.form button{ width:100%; display:inline-flex; align-items:center; justify-content:center; gap:.55rem;
+  font-family:var(--body); font-weight:600; font-size:1.02rem; cursor:pointer;
+  background:var(--rust-deep); color:var(--rust-text); border:none; text-decoration:none;
+  padding:1rem 2rem; border-radius:999px; transition:transform .18s ease, background .18s ease; }
+.form button:hover{ background:var(--rust); transform:translateY(-2px); }
+.form button:focus-visible{ outline:2px solid var(--ink); outline-offset:3px; }
+.note{ font-size:.86rem; color:var(--ink-soft); margin:1rem auto 0; max-width:24rem; }
+
+/* success state */
+.done{ max-width:28rem; margin:0 auto; }
+.done h2{ font-family:var(--display); font-weight:800; font-size:clamp(2rem,5vw,2.6rem); line-height:1.08; letter-spacing:-.02em; margin:0 0 .8rem; }
+.done p{ color:var(--ink-soft); margin:0; }
+[hidden]{ display:none !important; }
+
+footer{ border-top:1.5px solid var(--line); padding:1.8rem 0; text-align:center; }
+.filing{ font-family:var(--body); font-weight:500; font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-soft); margin:.2rem 0; }
+</style>
+</head>
+
+<body>
+
+<header class="frame">
+  <div class="masthead">
+    <span class="wordmark">Win Media <span>Studios</span></span>
+    <a class="back" href="index.html">← Read about the challenge</a>
+  </div>
+</header>
+
+<main class="frame">
+  <div class="wrap">
+
+    <!-- SIGN-UP STATE -->
+    <div id="signup">
+      <div class="illo">
+        <img src="assets/images/supportive-creator-community.webp" alt="A small, friendly group gathered around a table, sharing and encouraging each other" width="1500" height="844">
+      </div>
+      <p class="eyebrow"><span class="tick"></span>The 100-Day Camera Confidence Challenge</p>
+      <h1>Get on the <span class="accent">waiting list.</span></h1>
+      <p class="lead">The first cohort is capped at <b>twenty</b>, and it's filling up. Pop your name down and you'll be the first to know the moment the next round opens — at <b>founding-member pricing</b>, before it rises to USD&nbsp;$359.</p>
+
+      <!-- ============================================================
+           KIT / CONVERTKIT  ·  replace KIT_FORM_ID below with your form's ID
+           (Kit → your form → Embed → the number in the URL / data-uid)
+      ============================================================ -->
+      <form class="form" id="waitform">
+        <label for="fname">First name</label>
+        <input id="fname" name="fields[first_name]" type="text" placeholder="Your first name" autocomplete="given-name">
+        <label for="email">Email</label>
+        <input id="email" name="email_address" type="email" required placeholder="you@example.com" autocomplete="email">
+        <button type="submit">Join the waiting list <span aria-hidden="true">→</span></button>
+        <p class="note">No spam, ever. Just one email when the doors open.</p>
+      </form>
+    </div>
+
+    <!-- SUCCESS STATE -->
+    <div id="done" class="done" hidden>
+      <p class="eyebrow" style="justify-content:center;"><span class="tick"></span>You're on the list</p>
+      <h2>You're in. ✦</h2>
+      <p>We'll email you the moment the next cohort opens — keep an eye on your inbox (and your promotions/spam folder, just in case). See you on camera soon.</p>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <p class="filing">Win Media Studios · 100-Day Camera Confidence Challenge</p>
+  <p class="filing">Singapore · Est. 2022</p>
+</footer>
+
+<script>
+(function(){
+  // ↓↓↓ Replace with your Kit (ConvertKit) form ID ↓↓↓
+  var KIT_FORM_ID = "KIT_FORM_ID";
+  var form = document.getElementById('waitform');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var email = document.getElementById('email').value.trim();
+    if(!email){ return; }
+    var data = new FormData(form);
+    var send = fetch('https://app.kit.com/forms/' + KIT_FORM_ID + '/subscriptions', {
+      method: 'POST', mode: 'no-cors', body: data
+    }).catch(function(){});
+    // show success optimistically (Kit records the signup even with no-cors)
+    Promise.resolve(send).then(function(){
+      document.getElementById('signup').hidden = true;
+      document.getElementById('done').hidden = false;
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
